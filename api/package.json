@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/FacuGonzales/challenge-front-end-meli/issues"
   },
-  "homepage": "https://github.com/FacuGonzales/challenge-front-end-meli#readme"
+  "homepage": "https://github.com/FacuGonzales/challenge-front-end-meli#readme",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^4.17.2"
+  }
 }
