@@ -1,0 +1,19 @@
+{
+  "name": "api-meli",
+  "version": "1.0.0",
+  "description": "Servidor utilizado para el challenge front end de meli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FacuGonzales/challenge-front-end-meli.git"
+  },
+  "author": "Gonzales Liendo Facundo German",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FacuGonzales/challenge-front-end-meli/issues"
+  },
+  "homepage": "https://github.com/FacuGonzales/challenge-front-end-meli#readme"
+}
