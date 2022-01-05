@@ -23,4 +23,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 		this.subscribes.forEach(s => s.unsubscribe());
 	}
 
+  initParams(){
+		this.subscribes[0] = this.route.params.subscribe(params => this.params = params['search'] ? params['search']  : '');
+	}
+
 }
