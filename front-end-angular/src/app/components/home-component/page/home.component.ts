@@ -27,4 +27,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 		this.subscribes[0] = this.route.params.subscribe(params => this.params = params['search'] ? params['search']  : '');
 	}
 
+  searchValue(value){
+    this.router.navigate([`/items/${value}`])
+  }
 }
