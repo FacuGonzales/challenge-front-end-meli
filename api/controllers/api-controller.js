@@ -67,16 +67,16 @@ async function getForId(req, res){
 
         let item = new Producto();
 
-        item.id = responseItem.data.id,
-        item.title = responseItem.data.title,
-        item.price = responseItem.data.price,
-        item.sale_price = responseItem.data.sale_price,
-        item.available_quantity = responseItem.data.available_quantity,
-        item.currency_id = responseItem.data.currency_id,
-        item.img = responseItem.data.pictures.map( i => i.url);
-        item.condition = responseItem.data.condition,
-        item.shipping = responseItem.data.shipping,
-        item.address = responseItem.data.address,
+        item.id = data.id,
+        item.title = data.title,
+        item.price = data.price,
+        item.sale_price = data.sale_price,
+        item.available_quantity = data.available_quantity,
+        item.currency_id = data.currency_id,
+        item.img = data.pictures.map( i => i.url);
+        item.condition = data.condition,
+        item.shipping = data.shipping,
+        item.address = data.address,
         item.description = plain_text
 
         res.send(item);
@@ -87,9 +87,6 @@ async function getForId(req, res){
     }
 }
 
-async function getDescription(item){
-    
-}
 module.exports = {
     prueba,
     getForSearch,
