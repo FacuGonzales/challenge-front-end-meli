@@ -6,7 +6,11 @@ import { HomeComponent } from './page/home.component';
 const routes: Routes = [
   {
     path: '', component: HomeComponent
-  }
+  },
+  { 
+    path: 'items/:search', component: HomeComponent
+  },
+    
 ];
 
 @NgModule({
