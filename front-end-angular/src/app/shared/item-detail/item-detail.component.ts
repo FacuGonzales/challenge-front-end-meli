@@ -33,4 +33,14 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
     }
   }
 
+  getDetails(){
+    this.subscribes[0] = this.itemsData.getDetailItem(this.idItem).subscribe(
+      result => {
+        if(!result) this.error = true;
+
+        this.item = result;
+      },err => console.error(err)
+    )
+  }
+
 }
