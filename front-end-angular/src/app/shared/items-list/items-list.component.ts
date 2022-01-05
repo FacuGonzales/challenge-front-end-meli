@@ -33,4 +33,14 @@ export class ItemsListComponent implements OnInit, OnDestroy {
     }
   }
 
+  getItems(){
+    this.subscribes[0] = this.itemsData.getListItems(this.searchValue).subscribe(
+      result => {
+        if(!result) this.error = true;
+
+        this.itemsList = result;
+      },err => console.error(err)
+    )
+  }
+
 }
