@@ -49,13 +49,21 @@ async function getForSearch(req, res) {
 async function getForId(req, res){
     console.log('ID: ', req.params.id)
     try {
-        const response = await AXIOS({
+        const responseItem = await AXIOS({
             method: 'get',
-            url: 'https://api.mercadolibre.com/items/'+req.params.id,
+            url: `https://api.mercadolibre.com/items/${req.params.id}`,
+            responseType: 'json'
+        });
+        
+        let {data} = responseItem
+
+        const responseDescription = await AXIOS({
+            method: 'get',
+            url: `https://api.mercadolibre.com/items/${req.params.id}/description`,
             responseType: 'json'
         });
 
-        let {data} = response
+        let {plain_text} = responseDescription.data;
 
         let item = new Producto();
 
@@ -69,7 +77,7 @@ async function getForId(req, res){
         item.condition = data.condition,
         item.shipping = data.shipping,
         item.address = data.address,
-        item.description = data.description
+        item.description = plain_text
 
         res.send(item);
 
