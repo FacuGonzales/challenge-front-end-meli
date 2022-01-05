@@ -36,3 +36,35 @@ async function getForSearch(req, res) {
     }
 
 }
+
+async function getForId(req, res){
+    console.log('ID: ', req.params.id)
+    try {
+        const response = await AXIOS({
+            method: 'get',
+            url: 'https://api.mercadolibre.com/items/'+req.params.id,
+            responseType: 'json'
+        });
+
+        let {data} = response
+        
+
+        let producto = new Producto();
+
+        producto.id = data.id;
+        producto.title = data.title;
+        producto.price = data.price;
+        let item_condicion = data.attributes.filter(a => a.id == 'ITEM_CONDITION');
+        producto.item_condicion = item_condicion[0].value_name; 
+        producto.img = data.pictures.map( i => i.url);
+        console.log('data: ', data)
+
+        res.send(producto);
+
+        // return producto;
+
+    } catch (error) {
+        console.error(error);
+    }
+}
+
