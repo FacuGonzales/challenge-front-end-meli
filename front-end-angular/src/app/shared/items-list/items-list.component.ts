@@ -43,4 +43,7 @@ export class ItemsListComponent implements OnInit, OnDestroy {
     )
   }
 
+  verDetalle(item){
+    console.log(item)
+  }
 }
