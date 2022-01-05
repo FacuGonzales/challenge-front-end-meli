@@ -1,1 +1,7 @@
-<p>home works!</p>
+<nav-bar (searchValue)="searchValue($event)"></nav-bar>
+
+
+<items-list [searchValue]="params" *ngIf="params !== ''"></items-list>
+
+
+
