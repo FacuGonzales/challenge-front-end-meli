@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ItemsListComponent } from './items-list/items-list.component';
 
          
 
@@ -13,10 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
   ],
   declarations: [
     NavBarComponent,
+    ItemsListComponent,
   ],
   providers: [],
   exports: [
     NavBarComponent,
+    ItemsListComponent
   ]
 })
 
