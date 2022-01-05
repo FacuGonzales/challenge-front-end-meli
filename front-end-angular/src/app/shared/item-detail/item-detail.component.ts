@@ -27,5 +27,10 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
 		this.subscribes.forEach(s => s.unsubscribe());
 	}
 
- 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.idItem && this.idItem !== '') {
+      this.getDetails();
+    }
+  }
+
 }
