@@ -1,7 +1,5 @@
 <nav-bar (searchValue)="searchValue($event)"></nav-bar>
 
-
 <items-list [searchValue]="params" *ngIf="params !== ''"></items-list>
 
-
-
+<item-detail [idItem]="id" *ngIf="id !== ''"></item-detail>
