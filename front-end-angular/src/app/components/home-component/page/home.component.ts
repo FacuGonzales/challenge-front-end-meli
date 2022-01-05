@@ -10,6 +10,7 @@ import { Subscription } from 'rxjs';
 export class HomeComponent implements OnInit, OnDestroy {
 
   params: string = '';
+  id: string = '';
   subscribes: Subscription[] = [];
 
   constructor(private router: Router,
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   initParams(){
 		this.subscribes[0] = this.route.params.subscribe(params => this.params = params['search'] ? params['search']  : '');
+    this.subscribes[1] = this.route.params.subscribe(params => this.id = params['id'] ? params['id']  : '');
 	}
 
   searchValue(value:string){
