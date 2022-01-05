@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './page/home.component';
+import { SharedComponentsModule } from 'src/app/shared/shared-components.module';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import { HomeComponent } from './page/home.component';
     FormsModule,
     ReactiveFormsModule,
     HomeRoutingModule,
+    SharedComponentsModule,
   ],
   declarations: [HomeComponent],
   providers: [],
