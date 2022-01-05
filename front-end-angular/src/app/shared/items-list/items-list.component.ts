@@ -2,6 +2,7 @@ import { Component, Input, OnDestroy, OnInit, SimpleChanges } from '@angular/cor
 import { ItemsService } from 'src/app/services/items-service.service';
 import { Subscription } from 'rxjs';
 import { ItemModel } from 'src/app/models/item-model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'items-list',
@@ -18,7 +19,8 @@ export class ItemsListComponent implements OnInit, OnDestroy {
   subscribes: Subscription[] = [];
 
 
-  constructor(private itemsData: ItemsService) { }
+  constructor(private router: Router,
+              private itemsData: ItemsService) { }
 
   ngOnInit(): void {
   }
@@ -43,7 +45,7 @@ export class ItemsListComponent implements OnInit, OnDestroy {
     )
   }
 
-  verDetalle(item){
-    console.log(item)
+  viewDetail(id){
+    this.router.navigate([`/item/${id}`])
   }
 }

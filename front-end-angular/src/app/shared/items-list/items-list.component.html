@@ -1,6 +1,6 @@
 <div class="listado-container" *ngIf="itemsList.length">
 
-    <div class="contenedorPorProducto" *ngFor="let item of itemsList" (click)="verDetalle(item.id)">
+    <div class="contenedorPorProducto" *ngFor="let item of itemsList" (click)="viewDetail(item.id)">
 
         <div class="imagenProducto">
             <img src="{{ item.img }}" >
