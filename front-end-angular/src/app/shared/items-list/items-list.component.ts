@@ -27,4 +27,10 @@ export class ItemsListComponent implements OnInit, OnDestroy {
 		this.subscribes.forEach(s => s.unsubscribe());
 	}
 
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.searchValue && this.searchValue !== '') {
+      this.getItems();
+    }
+  }
+
 }
