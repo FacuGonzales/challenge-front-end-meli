@@ -1,13 +1,16 @@
 
 class Producto {
-    constructor(id, title, price, free_shipping, state_name, img, item_condicion, description){
+    constructor(id, title, price, sale_price, available_quantity, currency_id, shipping, img, condition, address, description){
         this.id = id,
         this.title = title,
         this.price = price,
-        this.free_shipping = free_shipping,
-        this.state_name = state_name,
+        this.sale_price = sale_price,
+        this.available_quantity = available_quantity,
+        this.currency_id = currency_id,
         this.img = img,
-        this.item_condicion = item_condicion,
+        this.condition = condition,
+        this.shipping = shipping,
+        this.address = address,
         this.description = description
     }
 }

@@ -1,6 +1,5 @@
 const AXIOS = require('axios');
 const Producto = require('../models/producto');
-const _producto = new Producto();
 
 function prueba(req, res) {
     res.send(productos);
@@ -16,17 +15,28 @@ async function getForSearch(req, res) {
 
         let resultados = response.data.results
         
+      
         let productos = new Array();
         resultados.forEach(element => {
-            _producto.id = element.id;
-            _producto.title = element.title;
-            _producto.price = element.price;
-            _producto.free_shipping = element.shipping.free_shipping;
-            _producto.state_name = element.address.state_name;
-            _producto.img = element.thumbnail
-            productos.push(_producto);
+
+            let item = new Producto();
+
+            item.id = element.id,
+            item.title = element.title,
+            item.price = element.price,
+            item.sale_price = element.sale_price,
+            item.available_quantity = element.available_quantity,
+            item.currency_id = element.currency_id,
+            item.img = element.thumbnail,
+            item.condition = element.condition,
+            item.shipping = element.shipping,
+            item.address = element.address,
+            item.description = element.description
+
+            productos.push(item);
         });
 
+        console.log(resultados)
         res.send(productos);
 
         // return productos;
@@ -46,15 +56,22 @@ async function getForId(req, res){
         });
 
         let {data} = response
-        
-        _producto.id = data.id;
-        _producto.title = data.title;
-        _producto.price = data.price;
-        let item_condicion = data.attributes.filter(a => a.id == 'ITEM_CONDITION');
-        _producto.item_condicion = item_condicion[0].value_name; 
-        _producto.img = data.pictures.map( i => i.url);
 
-        res.send(_producto);
+        let item = new Producto();
+
+        item.id = data.id,
+        item.title = data.title,
+        item.price = data.price,
+        item.sale_price = data.sale_price,
+        item.available_quantity = data.available_quantity,
+        item.currency_id = data.currency_id,
+        item.img = data.pictures.map( i => i.url);
+        item.condition = data.condition,
+        item.shipping = data.shipping,
+        item.address = data.address,
+        item.description = data.description
+
+        res.send(item);
 
         // return producto;
     } catch (error) {
