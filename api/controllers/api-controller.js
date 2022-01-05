@@ -49,27 +49,35 @@ async function getForSearch(req, res) {
 async function getForId(req, res){
     console.log('ID: ', req.params.id)
     try {
-        const response = await AXIOS({
+        const responseItem = await AXIOS({
             method: 'get',
-            url: 'https://api.mercadolibre.com/items/'+req.params.id,
+            url: `https://api.mercadolibre.com/items/${req.params.id}`,
+            responseType: 'json'
+        });
+        
+        let {data} = responseItem
+
+        const responseDescription = await AXIOS({
+            method: 'get',
+            url: `https://api.mercadolibre.com/items/${req.params.id}/description`,
             responseType: 'json'
         });
 
-        let {data} = response
+        let {plain_text} = responseDescription.data;
 
         let item = new Producto();
 
-        item.id = data.id,
-        item.title = data.title,
-        item.price = data.price,
-        item.sale_price = data.sale_price,
-        item.available_quantity = data.available_quantity,
-        item.currency_id = data.currency_id,
-        item.img = data.pictures.map( i => i.url);
-        item.condition = data.condition,
-        item.shipping = data.shipping,
-        item.address = data.address,
-        item.description = data.description
+        item.id = responseItem.data.id,
+        item.title = responseItem.data.title,
+        item.price = responseItem.data.price,
+        item.sale_price = responseItem.data.sale_price,
+        item.available_quantity = responseItem.data.available_quantity,
+        item.currency_id = responseItem.data.currency_id,
+        item.img = responseItem.data.pictures.map( i => i.url);
+        item.condition = responseItem.data.condition,
+        item.shipping = responseItem.data.shipping,
+        item.address = responseItem.data.address,
+        item.description = plain_text
 
         res.send(item);
 
@@ -79,6 +87,9 @@ async function getForId(req, res){
     }
 }
 
+async function getDescription(item){
+    
+}
 module.exports = {
     prueba,
     getForSearch,
