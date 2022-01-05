@@ -68,3 +68,8 @@ async function getForId(req, res){
     }
 }
 
+module.exports = {
+    prueba,
+    getForSearch,
+    getForId,
+};
