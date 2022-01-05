@@ -5,7 +5,7 @@ import { ItemsListComponent } from './page/items-list.component';
 
 const routes: Routes = [
   {
-    path: '/items/:search', component: ItemsListComponent, 
+    path: '', component: ItemsListComponent, 
   }
 ];
 
