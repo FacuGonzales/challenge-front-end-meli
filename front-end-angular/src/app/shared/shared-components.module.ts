@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableItemsComponent } from './table-items/table-items.component';
+import { DetailItemComponent } from './detail-item/detail-item.component';
 
          
 
@@ -15,11 +16,13 @@ import { TableItemsComponent } from './table-items/table-items.component';
   declarations: [
     NavBarComponent,
     TableItemsComponent,
+    DetailItemComponent,
   ],
   providers: [],
   exports: [
     NavBarComponent,
-    TableItemsComponent
+    TableItemsComponent,
+    DetailItemComponent
   ]
 })
 
