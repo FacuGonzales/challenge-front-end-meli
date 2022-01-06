@@ -5,12 +5,12 @@ import { ItemModel } from 'src/app/models/item-model';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-items-list',
+  selector: 'items-list',
   templateUrl: './items-list.component.html',
   styleUrls: ['./items-list.component.scss']
 })
 export class ItemsListComponent implements OnInit,OnDestroy {
-  
+
   params: string = '';
   itemsList: ItemModel[] = [];
   error: boolean = false;
