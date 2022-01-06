@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'nav-bar',
@@ -11,7 +12,7 @@ export class NavBarComponent implements OnInit {
   @Output() searchValue = new EventEmitter<string>()
   searchForm: FormGroup;
 
-  constructor( private fb: FormBuilder ) {}
+  constructor( private fb: FormBuilder, private router: Router ) {}
 
   ngOnInit(): void {
     this.formInit();
@@ -24,7 +25,7 @@ export class NavBarComponent implements OnInit {
   }
 
   searchItems(){
-    this.searchValue.emit(this.searchForm.value.nameItem);
+    let value = this.searchForm.value.nameItem;
+    this.router.navigate([`/items/${value.toLowerCase()}`])
   }
-
 }
