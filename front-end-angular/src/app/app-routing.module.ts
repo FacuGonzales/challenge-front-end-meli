@@ -14,7 +14,7 @@ const routes: Routes = [
   },
   { 
     path: 'item/:id', 
-    loadChildren: () => import('./components/item-detail/item-detail.module').then(m => m.ItemDetailModule), 
+    loadChildren: () => import('./components/item-detail-component/item-detail.module').then(m => m.ItemDetailModule), 
   },
   {
     path: '**', redirectTo: defaultPathApp
