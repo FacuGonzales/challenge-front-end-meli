@@ -7,13 +7,6 @@ const routes: Routes = [
   {
     path: '', component: HomeComponent
   },
-  { 
-    path: 'items/:search', component: HomeComponent
-  },
-  { 
-    path: 'item/:id', component: HomeComponent
-  },
-    
 ];
 
 @NgModule({
