@@ -1,5 +1,5 @@
 const AXIOS = require('axios');
-const Producto = require('../models/producto');
+const Item = require('../models/item');
 
 function prueba(req, res) {
     res.send(productos);
@@ -13,31 +13,30 @@ async function getForSearch(req, res) {
             responseType: 'json'
         });
 
-        let resultados = response.data.results
-        
-      
-        let productos = new Array();
-        resultados.forEach(element => {
+        let {results} = response.data;
+        let _newList = new Array();
 
-            let item = new Producto();
+        results.slice(0, 4).forEach(element => {
 
-            item.id = element.id,
-            item.title = element.title,
-            item.price = element.price,
-            item.sale_price = element.sale_price,
-            item.available_quantity = element.available_quantity,
-            item.currency_id = element.currency_id,
-            item.img = element.thumbnail,
-            item.condition = element.condition,
-            item.shipping = element.shipping,
-            item.address = element.address,
-            item.description = element.description
+            let _item = new Item();
 
-            productos.push(item);
+            _item.id = element.id,
+            _item.title = element.title,
+            _item.price = element.price,
+            _item.sale_price = element.sale_price,
+            _item.available_quantity = element.available_quantity,
+            _item.sold_quantity = element.sold_quantity,
+            _item.currency_id = element.currency_id,
+            _item.img = element.thumbnail,
+            _item.condition = element.condition,
+            _item.shipping = element.shipping,
+            _item.address = element.address,
+            _item.description = element.description
+
+            _newList.push(_item);
         });
 
-        console.log(resultados)
-        res.send(productos);
+        res.send(_newList);
 
         // return productos;
     } catch (error) {
@@ -47,7 +46,7 @@ async function getForSearch(req, res) {
 }
 
 async function getForId(req, res){
-    console.log('ID: ', req.params.id)
+    
     try {
         const responseItem = await AXIOS({
             method: 'get',
@@ -57,6 +56,8 @@ async function getForId(req, res){
         
         let {data} = responseItem
 
+        console.log(data);
+
         const responseDescription = await AXIOS({
             method: 'get',
             url: `https://api.mercadolibre.com/items/${req.params.id}/description`,
@@ -65,21 +66,22 @@ async function getForId(req, res){
 
         let {plain_text} = responseDescription.data;
 
-        let item = new Producto();
+        let _item = new Item();
 
-        item.id = data.id,
-        item.title = data.title,
-        item.price = data.price,
-        item.sale_price = data.sale_price,
-        item.available_quantity = data.available_quantity,
-        item.currency_id = data.currency_id,
-        item.img = data.pictures.map( i => i.url);
-        item.condition = data.condition,
-        item.shipping = data.shipping,
-        item.address = data.address,
-        item.description = plain_text
+        _item.id = data.id,
+        _item.title = data.title,
+        _item.price = data.price,
+        _item.sale_price = data.sale_price,
+        _item.available_quantity = data.available_quantity,
+        _item.sold_quantity = data.sold_quantity,
+        _item.currency_id = data.currency_id,
+        _item.img = data.pictures.map( i => i.url);
+        _item.condition = data.condition,
+        _item.shipping = data.shipping,
+        _item.address = data.address,
+        _item.description = plain_text
 
-        res.send(item);
+        res.send(_item);
 
         // return producto;
     } catch (error) {
