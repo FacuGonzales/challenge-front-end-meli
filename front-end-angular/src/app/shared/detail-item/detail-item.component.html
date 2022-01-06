@@ -1,0 +1,29 @@
+<div class="detalles-container">
+        
+    <div class="info-container">
+        <div class="imagenProducto">
+            <img src="{{ data.img }}">
+        </div>
+
+        <div class="infoProducto">
+
+            <p>{{ data.condition }}</p>
+
+            <h2 class="title">{{data.title}}</h2>
+
+            <h4>$ {{data.price}}</h4>
+
+            <button type="button" class="btn btn-primary btn-lg">Comprar</button>
+        </div>
+
+    </div>
+
+    <div class="extra">
+        <div class="descripcion-container">
+            <h4>Descripción del producto</h4>
+
+            <p>{{data.description}}</p>
+        </div>
+    </div>
+    
+</div>
