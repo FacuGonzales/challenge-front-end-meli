@@ -12,7 +12,7 @@ export class TableItemsComponent implements OnInit {
   @Input() data: ItemModel[] = [];
   itemsList: ItemModel[] = [];
 
-  constructor(private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -27,7 +27,4 @@ export class TableItemsComponent implements OnInit {
     this.itemsList = this.data
   }
 
-  viewDetail(id){
-    this.router.navigate([`/item/${id}`])
-  }
 }
