@@ -4,6 +4,7 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableItemsComponent } from './table-items/table-items.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
+import { ItemComponent } from './item/item.component';
 
          
 
@@ -17,6 +18,7 @@ import { DetailItemComponent } from './detail-item/detail-item.component';
     NavBarComponent,
     TableItemsComponent,
     DetailItemComponent,
+    ItemComponent,
   ],
   providers: [],
   exports: [
