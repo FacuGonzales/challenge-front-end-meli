@@ -8,10 +8,14 @@ const routes: Routes = [
     path: '', 
     loadChildren: () => import('./components/home-component/home.module').then(m => m.HomeModule), 
   },
-  // { 
-  //   path: 'items/:search', 
-  //   loadChildren: () => import('./components/items-list-component/items-list.module').then(m => m.ItemsListModule), 
-  // },
+  { 
+    path: 'items/:search', 
+    loadChildren: () => import('./components/items-list-component/items-list.module').then(m => m.ItemsListModule), 
+  },
+  { 
+    path: 'item/:id', 
+    loadChildren: () => import('./components/item-detail/item-detail.module').then(m => m.ItemDetailModule), 
+  },
   {
     path: '**', redirectTo: defaultPathApp
   }
