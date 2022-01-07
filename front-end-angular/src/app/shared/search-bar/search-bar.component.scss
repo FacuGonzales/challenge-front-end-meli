@@ -1,0 +1,21 @@
+@import "../../../scss/variables/colors";
+
+.navBar {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: $amarillo-meli;
+  padding: 8px;
+  align-items: center;
+
+  &--logo {
+    &--img {
+      margin-right: 20px;
+      width: 50px;
+    }
+  }
+
+  &--input {
+    width: 50%;
+  }
+}
