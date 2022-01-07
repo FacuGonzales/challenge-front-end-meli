@@ -26,7 +26,8 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
   exports: [
     NavBarComponent,
     TableItemsComponent,
-    DetailItemComponent
+    DetailItemComponent,
+    SearchBarComponent
   ]
 })
 
