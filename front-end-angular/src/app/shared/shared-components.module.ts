@@ -6,8 +6,7 @@ import { TableItemsComponent } from './table-items/table-items.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { ItemComponent } from './item/item.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
-
-         
+import { InputSearchComponent } from './input-search/input-search.component';     
 
 @NgModule({
   imports: [
@@ -21,13 +20,15 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     DetailItemComponent,
     ItemComponent,
     SearchBarComponent,
+    InputSearchComponent,
   ],
   providers: [],
   exports: [
     NavBarComponent,
     TableItemsComponent,
     DetailItemComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    InputSearchComponent
   ]
 })
 
