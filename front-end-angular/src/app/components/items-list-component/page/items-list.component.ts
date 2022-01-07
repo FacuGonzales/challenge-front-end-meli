@@ -45,4 +45,10 @@ export class ItemsListComponent implements OnInit,OnDestroy {
       },err => console.error(err)
     )
   }
+
+  newValueSearch(value){
+    this.params = value ? value : '';
+
+    this.getItems();
+  }
 }
