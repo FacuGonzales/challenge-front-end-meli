@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'search-bar',
@@ -7,9 +9,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchBarComponent implements OnInit {
 
-  constructor() { }
+  @Output() searchValue = new EventEmitter<string>()
+  searchForm: FormGroup;
+
+  constructor( private fb: FormBuilder, private router: Router ) {}
 
   ngOnInit(): void {
+    this.formInit();
   }
 
+  formInit(){
+    this.searchForm = this.fb.group({
+      nameItem: '',
+    })
+  }
+
+  navigateHome(){
+    this.router.navigate([`/`])
+  }
+
+  searchItems(){
+    let value = this.searchForm.value.nameItem;
+    this.router.navigate([`/items/${value.toLowerCase()}`])
+  }
 }
