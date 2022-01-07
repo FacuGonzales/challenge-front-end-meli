@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableItemsComponent } from './table-items/table-items.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
 import { ItemComponent } from './item/item.component';
+import { SearchBarComponent } from './search-bar/search-bar.component';
 
          
 
@@ -19,6 +20,7 @@ import { ItemComponent } from './item/item.component';
     TableItemsComponent,
     DetailItemComponent,
     ItemComponent,
+    SearchBarComponent,
   ],
   providers: [],
   exports: [
