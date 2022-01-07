@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TableItemsComponent } from './table-items/table-items.component';
 import { DetailItemComponent } from './detail-item/detail-item.component';
@@ -15,7 +14,6 @@ import { InputSearchComponent } from './input-search/input-search.component';
     ReactiveFormsModule,
   ],
   declarations: [
-    NavBarComponent,
     TableItemsComponent,
     DetailItemComponent,
     ItemComponent,
@@ -24,7 +22,6 @@ import { InputSearchComponent } from './input-search/input-search.component';
   ],
   providers: [],
   exports: [
-    NavBarComponent,
     TableItemsComponent,
     DetailItemComponent,
     SearchBarComponent,
