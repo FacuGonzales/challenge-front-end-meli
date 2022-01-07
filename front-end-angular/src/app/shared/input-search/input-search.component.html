@@ -1,0 +1,20 @@
+<form [formGroup]="searchForm" (ngSubmit)="searchItems()" class="formContainer">
+
+    <input type="text" 
+            class="formContainer--input"
+            aria-label="Nunca dejes de buscar"
+            id="buscador" 
+            name="as_word" 
+            placeholder="Nunca dejes de buscar" 
+            maxlength="120"
+            autofocus=""
+            autocapitalize="off" 
+            autocorrect="off" 
+            spellcheck="false" 
+            autocomplete="off" 
+            formControlName="nameItem">
+  
+    <button type="submit" id="botonBuscador" class="formContainer--button">
+        <img src="./assets/ic_Search.png" alt="Search" class="formContainer--button__img">
+    </button>
+</form>
