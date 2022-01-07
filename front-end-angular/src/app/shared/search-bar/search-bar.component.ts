@@ -28,8 +28,7 @@ export class SearchBarComponent implements OnInit {
     this.router.navigate([`/`])
   }
 
-  searchItems(){
-    let value = this.searchForm.value.nameItem;
-    this.router.navigate([`/items/${value.toLowerCase()}`])
+  emitValue(value){
+    this.searchValue.emit(value);
   }
 }
