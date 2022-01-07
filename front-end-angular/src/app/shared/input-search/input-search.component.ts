@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./input-search.component.scss']
 })
 export class InputSearchComponent implements OnInit {
-
+  @Output() searchValue = new EventEmitter<string>()
   searchForm: FormGroup;
 
   constructor( private fb: FormBuilder, private router: Router ) {}
@@ -25,6 +25,7 @@ export class InputSearchComponent implements OnInit {
 
   searchItems(){
     let value = this.searchForm.value.nameItem;
-    this.router.navigate([`/items/${value.toLowerCase()}`])
+    this.searchValue.emit(value);
+    this.router.navigate([`/items/${value.toLowerCase()}`]);
   }
 }
