@@ -1,1 +1,11 @@
-<p>price works!</p>
+<div class="container">
+    <h1 class="container__price">
+        <span class="container__price--prefix">{{pricesFormated[0]}}</span>
+        <span>{{pricesFormated[1]}}</span>
+        <span class="container__price--cents">{{pricesFormated[2]}}</span>
+    </h1>
+
+    <span class="container__shipLogo">
+        <img class="container__shipLogo--icon" *ngIf="free_shipping" src="../../../assets/ic_shipping.png" alt="Icon">  
+    </span>
+</div>
