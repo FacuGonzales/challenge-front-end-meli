@@ -6,6 +6,7 @@ import { ItemsListComponent } from './page/items-list.component';
 const routes: Routes = [
   {
     path: '', component: ItemsListComponent, 
+    data: { breadcrumb: 'Búsqueda' }
   }
 ];
 
