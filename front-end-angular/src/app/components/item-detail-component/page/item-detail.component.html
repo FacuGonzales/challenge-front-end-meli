@@ -1,3 +1,5 @@
 <search-bar></search-bar>
 
-<detail-item [data]="data"></detail-item>
+<detail-item [data]="data" *ngIf="!isError"></detail-item>
+
+<error-message [message]="messageError" *ngIf="isError"></error-message>
