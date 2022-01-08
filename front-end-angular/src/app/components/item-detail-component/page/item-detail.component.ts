@@ -13,7 +13,8 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
 
   id: string = '';
   data: ItemModel = {};
-  error: boolean = false;
+  isError: boolean = false;
+  messageError: string = '';
 
   subscribes: Subscription[] = [];
 
@@ -37,10 +38,16 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
   getItem(){
     this.subscribes[0] = this.itemsData.getDetailItem(this.id).subscribe(
       result => {
-        if(!result) this.error = true;
+        if(!result) {
+          this.isError = true;
+          this.messageError = '¡Lo sentimos!, No podemos mostrar este producto en este momento.'
+        }
 
-        this.data = result;
-      },err => console.error(err)
+        console.log(result)
+      },err => {
+        this.isError = true
+        this.messageError = '¡Lo sentimos!, No podemos mostrar este producto en este momento.'
+      }
     )
   }
 }
