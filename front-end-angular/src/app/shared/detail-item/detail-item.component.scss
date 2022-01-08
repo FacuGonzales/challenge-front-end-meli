@@ -1,0 +1,57 @@
+@import "../../../scss/variables/colors";
+
+.detailContainer {
+  background-color: $blanco;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-rows: 70% 30%;
+  height: 80vh;
+  margin: 0 auto;
+  width: 70%;
+
+  &__detailItem {
+    padding: 15px;
+    text-align: left;
+
+    &--img {
+      height: 52vh;
+      object-fit: contain;
+      width: 100%;
+    }
+
+    &--condition {
+    }
+
+    &--title {
+      font-size: 1.5em;
+      font-weight: bold;
+      line-height: normal;
+      padding: 15px 0px;
+    }
+
+    &--price {
+      font-size: 2rem !important;
+    }
+
+    &--btn {
+      background-color: $celesteButton;
+      border: 1px;
+      border-radius: 5px;
+      color: $blanco;
+      font-weight: bold;
+      margin: 50px 0px;
+      padding: 15px 100px;
+    }
+
+    &--descriptionTitle {
+    }
+    &--description {
+      color: $gris-descripciones;
+      display: -webkit-box;
+      overflow: hidden;
+      padding: 15px 0px;
+      -webkit-line-clamp: 5;
+      -webkit-box-orient: vertical;
+    }
+  }
+}
