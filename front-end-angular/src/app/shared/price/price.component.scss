@@ -8,15 +8,16 @@
     height: fit-content;
     position: relative;
     font-weight: bold;
+    font-size: 1.5em;
 
     &--prefix {
       margin-right: 5px;
     }
 
     &--cents {
-      font-size: 20px;
+      font-size: 0.6em;
       position: absolute;
-      top: 5px;
+      top: -5px;
       margin-left: 3px;
     }
   }
