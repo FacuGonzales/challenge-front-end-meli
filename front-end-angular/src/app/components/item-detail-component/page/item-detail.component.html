@@ -1,5 +1,7 @@
 <search-bar></search-bar>
 
+<breadcrumb class="breadcrumb" *ngIf="!isError"></breadcrumb>
+
 <detail-item [data]="data" *ngIf="!isError"></detail-item>
 
 <error-message [message]="messageError" *ngIf="isError"></error-message>
