@@ -2,6 +2,7 @@
 
 .formContainer {
   width: 100%;
+
   &--input {
     border: 1px solid $amarillo-meli;
     border-radius: 3px;
@@ -9,6 +10,10 @@
     padding: 7px 10px 9px 15px;
     transition: all 0.3s;
     width: 75%;
+
+    @media only screen and (max-width: 600px) {
+      width: 60%;
+    }
   }
 
   &--button {
@@ -20,6 +25,11 @@
     padding: 7px 0px 9px 0px;
     transition: all 0.3s;
     width: 8%;
+
+    @media only screen and (max-width: 600px) {
+      width: 15%;
+    }
+
     &__img {
       margin-bottom: -5px;
     }
