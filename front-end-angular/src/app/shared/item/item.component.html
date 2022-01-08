@@ -1,19 +1,19 @@
 <div class="itemContainer" (click)="viewDetail(item.id)">
 
-    <div class="itemContainer--imgContainer">
+    <div class="itemContainer--styleContainer itemContainer--imgContainer">
 
         <img src="{{ item.img }}" class="itemContainer--imgContainer__img" alt="imgProducto">
 
     </div>
 
-    <div class="itemContainer--priceContainer">
+    <div class="itemContainer--styleContainer itemContainer--priceContainer">
 
         <price [price]="item.price" [decimals]="2" [prefix]="item.currency_id" [free_shipping]="item.shipping.free_shipping"></price>
 
         <p class="itemContainer--priceContainer__description">{{ item.title }}</p>
    </div> 
 
-    <div class="itemContainer--cityContainer">
+    <div class="itemContainer--styleContainer itemContainer--cityContainer">
 
         <p class="itemContainer--cityContainer__city">{{ item.address.city_name }}</p>
 
