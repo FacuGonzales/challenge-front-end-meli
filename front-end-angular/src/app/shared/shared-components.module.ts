@@ -7,7 +7,8 @@ import { ItemComponent } from './item/item.component';
 import { SearchBarComponent } from './search-bar/search-bar.component';
 import { InputSearchComponent } from './input-search/input-search.component';
 import { PriceComponent } from './price/price.component';
-import { ErrorMessageComponent } from './error-message/error-message.component';     
+import { ErrorMessageComponent } from './error-message/error-message.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';     
 
 @NgModule({
   imports: [
@@ -23,6 +24,7 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
     InputSearchComponent,
     PriceComponent,
     ErrorMessageComponent,
+    BreadcrumbComponent,
   ],
   providers: [],
   exports: [
@@ -31,7 +33,8 @@ import { ErrorMessageComponent } from './error-message/error-message.component';
     SearchBarComponent,
     InputSearchComponent,
     PriceComponent,
-    ErrorMessageComponent
+    ErrorMessageComponent,
+    BreadcrumbComponent
   ]
 })
 
