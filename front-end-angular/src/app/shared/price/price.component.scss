@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  width: fit-content;
+  position: relative;
+
+  &__price {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    font-weight: bold;
+
+    &--prefix {
+      margin-right: 5px;
+    }
+
+    &--cents {
+      font-size: 20px;
+      position: absolute;
+      top: 5px;
+      margin-left: 3px;
+    }
+  }
+
+  &__shipLogo {
+    position: absolute;
+    right: -30px;
+    top: 0px;
+  }
+}
