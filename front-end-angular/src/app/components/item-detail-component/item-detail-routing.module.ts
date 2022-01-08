@@ -6,6 +6,7 @@ import { ItemDetailComponent } from './page/item-detail.component';
 const routes: Routes = [
   {
     path: '', component: ItemDetailComponent, 
+    data: { breadcrumb: 'Detalle' }
   }
 ];
 
