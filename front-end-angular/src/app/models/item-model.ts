@@ -7,6 +7,7 @@ export interface ItemModel {
     price?: string,
     sale_price?: string,
     available_quantity?: number,
+    sold_quantity?: number,
     currency_id?: number,
     img?: string[],
     condition?: string,
