@@ -1,13 +1,12 @@
 @import "../../../scss/variables/colors";
+@import "../../../scss/mixin/mixin.scss";
 
 .errorContainer {
+  @include display-grid(center, grid, 30% 70%, "", "");
   align-content: center;
-  align-items: center;
   background-color: $blanco;
-  display: grid;
   font-size: 1.3em;
   grid-gap: 3%;
-  grid-template-columns: 30% 70%;
   height: 40vh;
   left: 50%;
   position: absolute;

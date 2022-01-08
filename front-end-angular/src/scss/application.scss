@@ -1,5 +1,6 @@
 @import "./reset";
 @import "./variables/colors";
+@import "./mixin/mixin";
 
 body {
   background-color: $gris-meli;

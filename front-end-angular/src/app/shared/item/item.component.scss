@@ -1,27 +1,44 @@
 @import "../../../scss/variables/colors";
+@import "../../../scss/mixin/mixin.scss";
 
 .itemContainer {
+  @include height-width(300px, 100%);
   display: grid;
   grid-template-columns: 25% 50% 25%;
-  width: 70%;
-  height: 300px;
+  // width: 100%; //70%;
+  // height: 300px;
   margin: 0 auto;
   background-color: $blanco;
   border-bottom: 2px solid $gris-meli;
   cursor: pointer;
+
+  @media only screen and (max-width: 1200px) {
+    width: 80%;
+  }
+
+  @media only screen and (max-width: 768px) {
+    @include height-width(215px, 80%);
+  }
 
   &--styleContainer {
     display: flex;
     flex-direction: column;
     padding: 15px 10px 15px 10px;
     text-align: left;
+
+    @media only screen and (max-width: 768px) {
+      padding: 0px 10px;
+    }
   }
 
   &--imgContainer {
     &__img {
-      height: 260px;
-      width: 100%;
+      @include height-width(260px, 100%);
       object-fit: contain;
+
+      @media only screen and (max-width: 768px) {
+        height: 185px;
+      }
     }
   }
 
@@ -31,6 +48,14 @@
 
     &__description {
       padding-top: 35px;
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 0.8em;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 0.6em;
+      }
     }
   }
 
@@ -38,5 +63,13 @@
     font-size: medium;
     padding-top: 50px;
     text-align: center;
+
+    @media only screen and (max-width: 1200px) {
+      font-size: 0.8em;
+    }
+
+    @media only screen and (max-width: 768px) {
+      font-size: 0.6em;
+    }
   }
 }

@@ -1,25 +1,40 @@
 @import "../../../scss/variables/colors";
+@import "../../../scss/mixin/mixin.scss";
 
 .detailContainer {
+  @include display-grid("", grid, 70% 30%, 70% 30%, "");
+  @include height-width(80vh, 70%);
   background-color: $blanco;
-  display: grid;
-  grid-template-columns: 70% 30%;
-  grid-template-rows: 70% 30%;
-  height: 80vh;
   margin: 0 auto;
-  width: 70%;
+
+  @media only screen and (max-width: 1200px) {
+    @include display-grid("", grid, 60% 40%, 60% 40%, "");
+  }
+
+  @media only screen and (max-width: 768px) {
+    @include display-grid("", grid, 50% 50%, 50% 50%, "");
+  }
+
+  @media only screen and (max-width: 600px) {
+    @include display-grid("", block, none, none, "");
+    height: 90vh;
+  }
 
   &__detailItem {
     padding: 15px;
     text-align: left;
 
     &--img {
-      height: 52vh;
+      @include height-width(52vh, 100%);
       object-fit: contain;
-      width: 100%;
-    }
 
-    &--condition {
+      @media only screen and (max-width: 1200px) {
+        @include height-width(42vh, 95%);
+      }
+
+      @media only screen and (max-width: 768px) {
+        @include height-width(35vh, 80%);
+      }
     }
 
     &--title {
@@ -27,10 +42,31 @@
       font-weight: bold;
       line-height: normal;
       padding: 15px 0px;
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 1em;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 0.8em;
+        padding: 25px 0px;
+      }
     }
 
     &--price {
       font-size: 2rem !important;
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 1.8em;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 1em;
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: 0.8em;
+      }
     }
 
     &--btn {
@@ -41,10 +77,20 @@
       font-weight: bold;
       margin: 50px 0px;
       padding: 15px 100px;
+
+      @media only screen and (max-width: 1200px) {
+        padding: 15px 40px;
+      }
+
+      @media only screen and (max-width: 768px) {
+        padding: 12px 60px;
+      }
+
+      @media only screen and (max-width: 600px) {
+        margin: 20px 0px;
+      }
     }
 
-    &--descriptionTitle {
-    }
     &--description {
       color: $gris-descripciones;
       display: -webkit-box;
@@ -52,6 +98,18 @@
       padding: 15px 0px;
       -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
+
+      @media only screen and (max-width: 1200px) {
+        font-size: 1em;
+      }
+
+      @media only screen and (max-width: 768px) {
+        font-size: 0.8em;
+      }
+
+      @media only screen and (max-width: 600px) {
+        font-size: 0.5em;
+      }
     }
   }
 }

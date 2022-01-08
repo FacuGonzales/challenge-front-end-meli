@@ -1,12 +1,11 @@
 @import "../../../scss/variables/colors";
+@import "../../../scss/mixin/mixin.scss";
 
 .navBar {
-  display: flex;
-  justify-content: center;
+  @include display-flex(center, flex, center, "");
   width: 100%;
   background-color: $amarillo-meli;
   padding: 8px 0px;
-  align-items: center;
 
   &--logo {
     &--img {
