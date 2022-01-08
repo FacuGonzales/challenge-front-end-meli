@@ -43,7 +43,8 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
           this.messageError = '¡Lo sentimos!, No podemos mostrar este producto en este momento.'
         }
 
-        console.log(result)
+        this.data = result;
+        
       },err => {
         this.isError = true
         this.messageError = '¡Lo sentimos!, No podemos mostrar este producto en este momento.'
