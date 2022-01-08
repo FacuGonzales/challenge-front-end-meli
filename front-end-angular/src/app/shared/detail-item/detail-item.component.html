@@ -1,29 +1,25 @@
-<div class="detalles-container">
+<div class="detailContainer">
         
-    <div class="info-container">
-        <div class="imagenProducto">
-            <img src="{{ data.img }}">
-        </div>
-
-        <div class="infoProducto">
-
-            <p>{{ data.condition }}</p>
-
-            <h2 class="title">{{data.title}}</h2>
-
-            <h4>$ {{data.price}}</h4>
-
-            <button type="button" class="btn btn-primary btn-lg">Comprar</button>
-        </div>
-
+    <div class="detailContainer__detailItem">
+        <img class="detailContainer__detailItem--img" src="{{ data.img[0] }}">
     </div>
 
-    <div class="extra">
-        <div class="descripcion-container">
-            <h4>Descripción del producto</h4>
-
-            <p>{{data.description}}</p>
-        </div>
+    <div class="detailContainer__detailItem">
+        <p class="detailContainer__detailItem--condition">
+            <span *ngIf="data.condition === 'nuevo'">Nuevo</span>
+            <span *ngIf="data.condition === 'used'">Usado</span>
+            -
+            {{data.sold_quantity}} Vendidos
+        </p>
+        <h1 class="detailContainer__detailItem--title">{{data.title}}</h1>
+        <price class="detailContainer__detailItem--price" [price]="data.price" [decimals]="2" [prefix]="data.currency_id" ></price>
+        <button type="button" class="detailContainer__detailItem--btn">Comprar</button>
     </div>
-    
+
+    <div class="detailContainer__detailItem">
+        <h1 class="detailContainer__detailItem--title">Descripción del producto</h1>
+        <p class="detailContainer__detailItem--description">
+            {{data.description}}
+        </p>
+    </div>
 </div>
