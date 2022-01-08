@@ -1,0 +1,13 @@
+@import "../../../scss/variables/colors";
+
+.ulContainer {
+  margin: 15px auto;
+  width: 75%;
+
+  &__liContainer {
+    &--a {
+      text-decoration: none;
+      color: $negro;
+    }
+  }
+}
