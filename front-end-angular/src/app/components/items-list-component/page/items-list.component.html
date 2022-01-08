@@ -1,3 +1,7 @@
 <search-bar (searchValue)="newValueSearch($event)"></search-bar>
 
-<table-items [data]="itemsList"></table-items>
+<breadcrumb class="breadcrumb" *ngIf="!isError"></breadcrumb>
+
+<table-items [data]="itemsList" *ngIf="!isError"></table-items>
+
+<error-message [message]="messageError" *ngIf="isError"></error-message>
