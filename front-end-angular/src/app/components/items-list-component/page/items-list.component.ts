@@ -13,7 +13,8 @@ export class ItemsListComponent implements OnInit,OnDestroy {
 
   params: string = '';
   itemsList: ItemModel[] = [];
-  error: boolean = false;
+  isError: boolean = false;
+  messageError: string = '';
 
   subscribes: Subscription[] = [];
 
@@ -39,10 +40,16 @@ export class ItemsListComponent implements OnInit,OnDestroy {
   getItems(){
     this.subscribes[0] = this.itemsData.getListItems(this.params).subscribe(
       result => {
-        if(!result) this.error = true;
+        if(!result || !result.length) {
+          this.isError = true;
+          this.messageError = '¡Lo sentimos! No encontramos resultados disponibles.';
+        }
 
         this.itemsList = result;
-      },err => console.error(err)
+      },err => {
+        this.isError = true
+        this.messageError = '¡Lo sentimos! No encontramos resultados disponibles.';
+      }
     )
   }
 
