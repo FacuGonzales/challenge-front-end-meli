@@ -12,7 +12,7 @@
             {{data.sold_quantity}} Vendidos
         </p>
         <h1 class="detailContainer__detailItem--title">{{data.title}}</h1>
-        <price class="detailContainer__detailItem--price" [price]="data.price" [decimals]="2" [prefix]="data.currency_id" ></price>
+        <price class="detailContainer__detailItem--price" [price]="data.price" [decimals]="2" [prefix]="data.currency_id" [free_shipping]="data.shipping.free_shipping" ></price>
         <button type="button" class="detailContainer__detailItem--btn">Comprar</button>
     </div>
 
