@@ -1,0 +1,30 @@
+
+.priceContainer {
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+    font-weight: 400;
+}
+
+.cents {
+    font-size: 20px;
+    position: absolute;
+    top: 5px;
+    margin-left: 3px;
+}
+
+.prefix {
+    margin-right: 5px;
+}
+
+.mainContainer {
+    display: flex;
+    width: fit-content;
+    position: relative;
+}
+
+.shipLogo {
+    position: absolute;
+    right: -50px;
+    top: 10px;
+}

@@ -1,8 +1,6 @@
-@import "./variables/colors";
-@import "./reset";
+@import 'scss/colors';
 
 body {
-  background-color: $gris-meli;
-  font-family: "Proxima Nova", "Helvetica Neue", Helvetica, Roboto, Arial,
-    sans-serif;
+    background-color: $gris-meli;
+    font-family: "Proxima Nova","Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
 }

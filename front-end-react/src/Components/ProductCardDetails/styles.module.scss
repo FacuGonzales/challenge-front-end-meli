@@ -1,0 +1,34 @@
+@import 'scss/colors';
+
+.detailsContainer {
+    height: 80vh;
+    width: 70%;
+    background-color: $blanco;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 70% 30%;
+}
+
+.detailItem {
+    text-align: left;
+    padding: 15px;
+
+    > .description{
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;  
+        overflow: hidden;
+        color: $gris-descripciones;
+    }
+}
+
+.image {
+    width: 100%;
+    height: 52vh;
+    object-fit: contain;
+}
+
+.title {
+    line-height: normal;
+}
