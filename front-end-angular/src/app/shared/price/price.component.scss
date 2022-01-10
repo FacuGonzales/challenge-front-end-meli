@@ -8,7 +8,6 @@
   &__price {
     @include height-width(fit-content, fit-content);
     position: relative;
-    font-weight: bold;
     font-size: 1.5em;
 
     @media only screen and (max-width: 1200px) {
